@@ -23,10 +23,9 @@ namespace WebAtividadeEntrevista.Controllers
         }
 
         [HttpPost]
-        public JsonResult Incluir(ClienteModel model)
+        public ActionResult Incluir(ClienteModel model)
         {
-            BoCliente bo = new BoCliente();
-            
+
             if (!this.ModelState.IsValid)
             {
                 List<string> erros = (from item in ModelState.Values
@@ -38,22 +37,34 @@ namespace WebAtividadeEntrevista.Controllers
             }
             else
             {
-                
-                model.Id = bo.Incluir(new Cliente()
-                {                    
-                    CEP = model.CEP,
-                    Cidade = model.Cidade,
-                    Email = model.Email,
-                    Estado = model.Estado,
-                    Logradouro = model.Logradouro,
-                    Nacionalidade = model.Nacionalidade,
-                    Nome = model.Nome,
-                    Sobrenome = model.Sobrenome,
-                    Telefone = model.Telefone,
-                    CPF = model.CPF
-                });
+                if (!model.CPF.IsValid())
+                {
+                    TempData["Forms"] = "CPF Inválido";
+                    return Json("CPF Inválido");
+                }
 
-           
+                var cliente = new BoCliente();
+
+                if (cliente.VerificarExistencia(model.CPF))
+                {
+                    return Json("CPF jáexiste");
+                }
+
+                model.Id = cliente.Incluir(
+                    new Cliente()
+                    {
+                        CEP = model.CEP,
+                        Cidade = model.Cidade,
+                        Email = model.Email,
+                        Estado = model.Estado,
+                        Logradouro = model.Logradouro,
+                        Nacionalidade = model.Nacionalidade,
+                        Nome = model.Nome,
+                        Sobrenome = model.Sobrenome,
+                        Telefone = model.Telefone,
+                        CPF = model.CPF
+                    });
+
                 return Json("Cadastro efetuado com sucesso");
             }
         }
@@ -62,7 +73,7 @@ namespace WebAtividadeEntrevista.Controllers
         public JsonResult Alterar(ClienteModel model)
         {
             BoCliente bo = new BoCliente();
-       
+
             if (!this.ModelState.IsValid)
             {
                 List<string> erros = (from item in ModelState.Values
@@ -88,7 +99,7 @@ namespace WebAtividadeEntrevista.Controllers
                     Telefone = model.Telefone,
                     CPF = model.CPF
                 });
-                               
+
                 return Json("Cadastro alterado com sucesso");
             }
         }
@@ -117,7 +128,7 @@ namespace WebAtividadeEntrevista.Controllers
                     CPF = cliente.CPF
                 };
 
-            
+
             }
 
             return View(model);

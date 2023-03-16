@@ -1,40 +1,41 @@
 ﻿
 $(document).ready(function () {
-    $('#formCadastro').submit(function (e) {
-        e.preventDefault();
+    $('#formcadastro').submit(function (e) {
+        e.preventdefault();
         $.ajax({
-            url: urlPost,
-            method: "POST",
+            url: urlpost,
+            method: "post",
             data: {
-                "NOME": $(this).find("#Nome").val(),
-                "CEP": $(this).find("#CEP").val(),
-                "Email": $(this).find("#Email").val(),
-                "Sobrenome": $(this).find("#Sobrenome").val(),
-                "Nacionalidade": $(this).find("#Nacionalidade").val(),
-                "Estado": $(this).find("#Estado").val(),
-                "Cidade": $(this).find("#Cidade").val(),
-                "Logradouro": $(this).find("#Logradouro").val(),
-                "Telefone": $(this).find("#Telefone").val()
+                "nome": $(this).find("#nome").val(),
+                "cep": $(this).find("#cep").val(),
+                "email": $(this).find("#email").val(),
+                "sobrenome": $(this).find("#sobrenome").val(),
+                "nacionalidade": $(this).find("#nacionalidade").val(),
+                "estado": $(this).find("#estado").val(),
+                "cidade": $(this).find("#cidade").val(),
+                "logradouro": $(this).find("#logradouro").val(),
+                "telefone": $(this).find("#telefone").val(),
+                "cpf": $(this).find("#cpf").val()
             },
             error:
             function (r) {
                 if (r.status == 400)
-                    ModalDialog("Ocorreu um erro", r.responseJSON);
+                    modaldialog("ocorreu um erro", r.responsejson);
                 else if (r.status == 500)
-                    ModalDialog("Ocorreu um erro", "Ocorreu um erro interno no servidor.");
+                    modaldialog("ocorreu um erro", "ocorreu um erro interno no servidor.");
             },
             success:
             function (r) {
-                ModalDialog("Sucesso!", r)
-                $("#formCadastro")[0].reset();
+                modaldialog("sucesso!", r)
+                $("#formcadastro")[0].reset();
             }
         });
     })
     
 })
 
-function ModalDialog(titulo, texto) {
-    var random = Math.random().toString().replace('.', '');
+function modaldialog(titulo, texto) {
+    var random = math.random().tostring().replace('.', '');
     var texto = '<div id="' + random + '" class="modal fade">                                                               ' +
         '        <div class="modal-dialog">                                                                                 ' +
         '            <div class="modal-content">                                                                            ' +
@@ -46,7 +47,7 @@ function ModalDialog(titulo, texto) {
         '                    <p>' + texto + '</p>                                                                           ' +
         '                </div>                                                                                             ' +
         '                <div class="modal-footer">                                                                         ' +
-        '                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>             ' +
+        '                    <button type="button" class="btn btn-default" data-dismiss="modal">fechar</button>             ' +
         '                                                                                                                   ' +
         '                </div>                                                                                             ' +
         '            </div><!-- /.modal-content -->                                                                         ' +

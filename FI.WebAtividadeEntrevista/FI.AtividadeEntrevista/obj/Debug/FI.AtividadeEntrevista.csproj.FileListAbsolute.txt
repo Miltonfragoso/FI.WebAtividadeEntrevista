@@ -22,3 +22,9 @@ C:\Users\MILTON\Downloads\FI.WebAtividadeEntrevista\FI.WebAtividadeEntrevista\FI
 C:\Users\MILTON\Downloads\FI.WebAtividadeEntrevista\FI.WebAtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.csproj.CoreCompileInputs.cache
 C:\Users\MILTON\Downloads\FI.WebAtividadeEntrevista\FI.WebAtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.dll
 C:\Users\MILTON\Downloads\FI.WebAtividadeEntrevista\FI.WebAtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.pdb
+C:\Projetos no Git\FI.WebAtividadeEntrevista\FI.WebAtividadeEntrevista\FI.AtividadeEntrevista\bin\Debug\FI.AtividadeEntrevista.dll
+C:\Projetos no Git\FI.WebAtividadeEntrevista\FI.WebAtividadeEntrevista\FI.AtividadeEntrevista\bin\Debug\FI.AtividadeEntrevista.pdb
+C:\Projetos no Git\FI.WebAtividadeEntrevista\FI.WebAtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.csproj.AssemblyReference.cache
+C:\Projetos no Git\FI.WebAtividadeEntrevista\FI.WebAtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.csproj.CoreCompileInputs.cache
+C:\Projetos no Git\FI.WebAtividadeEntrevista\FI.WebAtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.dll
+C:\Projetos no Git\FI.WebAtividadeEntrevista\FI.WebAtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.pdb

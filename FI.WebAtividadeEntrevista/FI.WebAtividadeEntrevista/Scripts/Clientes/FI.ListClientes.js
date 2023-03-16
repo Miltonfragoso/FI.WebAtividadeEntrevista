@@ -21,7 +21,7 @@ $(document).ready(function () {
                     width: '35%'
                 },
                 Alterar: {
-                    title: '',
+                    title: 'Editar',
                     display: function (data) {
                         return '<button onclick="window.location.href=\'' + urlAlteracao + '/' + data.record.Id + '\'" class="btn btn-primary btn-sm">Alterar</button>';
                     }
